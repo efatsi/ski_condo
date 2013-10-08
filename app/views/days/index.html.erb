@@ -1,5 +1,3 @@
-<h1>Ski Condo App!</h1>
-
 <%= link_to '<< Previous', root_url(:offset => offset - 1) %> |
 <%= link_to 'Next >>', root_url(:offset => offset + 1) %>
 
@@ -10,7 +8,7 @@
       <ul>
         <% day.visits.each do |visit| %>
           <li>
-            <%= visit %>
+            <%= link_to visit, visit.user %>
             <% if visit.user == current_user %>
               <%= link_to 'x', unvisit_path(visit), :method => :delete %>
             <% end %>

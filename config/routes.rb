@@ -1,5 +1,5 @@
 SkiCondo::Application.routes.draw do
-  resources :users, :only => [:new, :create, :index]
+  resources :users, :only => [:new, :create, :index, :show]
   resources :days, :only => :index
 
   post '/days/:id/visit' => 'visits#create',  :as => 'visit'
