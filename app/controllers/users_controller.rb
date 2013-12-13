@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   def require_login
     if !logged_in?
       flash[:error] = "You must be logged in to see User details"
-      redirect_to root_url
+      redirect_to :back
     end
   end
 
