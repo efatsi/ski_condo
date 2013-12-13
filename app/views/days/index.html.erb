@@ -19,9 +19,9 @@
               <%= link_to update_visit_path(visit, {:visit => {:night => !visit.night}}), :method => :put do %>
                 <span class="icon-moon <%= visit.night? ? 'chosen' : 'unchosen' %>"></span>
               <% end %>
-              <%= link_to '', unvisit_path(visit),
+              <%= link_to 'x', unvisit_path(visit),
                 :method => :delete,
-                :class  => 'icon-cross',
+                # :class  => 'icon-cross',
                 :confirm => 'Delete your visit?' %>
             <% else %>
               <% if visit.day? %>
