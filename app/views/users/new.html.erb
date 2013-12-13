@@ -1,12 +1,11 @@
-<%= form_for @user do |f| %>
+<%= simple_form_for @user do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
+  <%= f.input :name, :label => false %>
   <%= f.label :email %>
-  <%= f.text_field :email %>
-  <br>
+  <%= f.input :email, :label => false %>
   <%= f.label :phone_number %>
-  <%= f.text_field :phone_number %>
+  <%= f.input :phone_number, :label => false %>
+
   <br>
-  <%= f.submit %>
+  <%= f.submit "Submit", :class => 'btn btn-submit' %>
 <% end %>

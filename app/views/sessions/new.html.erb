@@ -1,6 +1,6 @@
-<%= form_for :session, :url => sessions_path do |f| %>
+<%= simple_form_for :session, :url => sessions_path do |f| %>
   <%= f.label :email %>
-  <%= f.text_field :email %>
+  <%= f.input :email, :label => false %>
   <br>
-  <%= f.submit 'Login' %>
+  <%= f.submit 'Login', :class => 'btn btn-submit' %>
 <% end %>
