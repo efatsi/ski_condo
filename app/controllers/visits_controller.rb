@@ -11,6 +11,17 @@ class VisitsController < ApplicationController
     redirect_to :back
   end
 
+  def update
+    @visit = Visit.find(params[:id])
+
+    if @visit.update_attributes(params.require(:visit).permit!)
+      redirect_to :back
+    else
+      flash[:error] = "Something went wrong :("
+      redirect_to :back
+    end
+  end
+
   def destroy
     visit = Visit.find(params[:id])
     visit.destroy

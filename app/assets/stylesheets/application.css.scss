@@ -12,6 +12,8 @@
  *= require_tree .
  */
 
+@import 'setup/fonts';
+
 body {
   background-color: #fff;
   color: #333;
@@ -100,12 +102,12 @@ header {
 .home-header {
     text-align: center;
     font-size: 100px;
-	padding-bottom: 5px;
+  padding-bottom: 5px;
 }
 
 .subtitle {
     font-size: 20px;
-	padding-top: 5px;
+  padding-top: 5px;
 }
 
 .header-controls {
@@ -115,6 +117,6 @@ header {
 }
 
 li.nav-opt {
-	display: inline;
-	padding-right: 20px;
+  display: inline;
+  padding-right: 20px;
 }

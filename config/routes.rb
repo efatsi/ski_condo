@@ -4,6 +4,7 @@ SkiCondo::Application.routes.draw do
 
   post '/days/:id/visit' => 'visits#create',  :as => 'visit'
   delete '/visits/:id'  => 'visits#destroy', :as => 'unvisit'
+  put '/visits/:id' => 'visits#update', :as => 'update_visit'
 
   get '/login'  => 'sessions#new'
   get '/logout' => 'sessions#destroy'

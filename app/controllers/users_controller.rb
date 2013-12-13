@@ -34,11 +34,12 @@ class UsersController < ApplicationController
   def require_login
     if !logged_in?
       flash[:error] = "You must be logged in to see User details"
-      redirect_to :back
+      new_path = request.env["HTTP_REFERER"].present? ? :back : root_url
+      redirect_to new_path
     end
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :phone_number)
+    params.require(:user).permit!
   end
 end

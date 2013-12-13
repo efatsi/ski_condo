@@ -13,7 +13,23 @@
           <li>
             <%= link_to visit, visit.user %>
             <% if visit.user == current_user %>
-              <%= link_to 'x', unvisit_path(visit), :method => :delete %>
+              <%= link_to update_visit_path(visit, {:visit => {:day => !visit.day}}), :method => :put do %>
+                <span class="icon-sun <%= visit.day? ? 'chosen' : 'unchosen' %>"></span>
+              <% end %>
+              <%= link_to update_visit_path(visit, {:visit => {:night => !visit.night}}), :method => :put do %>
+                <span class="icon-moon <%= visit.night? ? 'chosen' : 'unchosen' %>"></span>
+              <% end %>
+              <%= link_to '', unvisit_path(visit),
+                :method => :delete,
+                :class  => 'icon-cross',
+                :confirm => 'Delete your visit?' %>
+            <% else %>
+              <% if visit.day? %>
+                <span class="icon-sun chosen"></span>
+              <% end %>
+              <% if visit.night? %>
+                <span class="icon-moon chosen"></span>
+              <% end %>
             <% end %>
           </li>
         <% end %>
