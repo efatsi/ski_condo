@@ -1,6 +1,9 @@
 <%= link_to '<< Previous', root_url(:offset => offset - 1) %> |
 <%= link_to 'Next >>', root_url(:offset => offset + 1) %>
 
+<br>
+<br>
+
 <ul>
   <% @days.each do |day| %>
     <li>
