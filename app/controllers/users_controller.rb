@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :assign_user, :only => :show
-  before_filter :require_login, :only => :show, :index
+  before_filter :require_login, :only => [:show, :index]
 
   def new
     @user = User.new
