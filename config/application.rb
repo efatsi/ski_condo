@@ -9,6 +9,6 @@ Bundler.require(:default, Rails.env)
 module SkiCondo
   class Application < Rails::Application
     config.time_zone = 'MST'
-    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+    config.assets.paths << "#{Rails.root}/app/assets/fonts/"
   end
 end
